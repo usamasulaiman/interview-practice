@@ -29,3 +29,5 @@ class RatingComponent {
 
 const ratingComp = new RatingComponent();
 ratingComp.initialiseRating();
+
+module.exports = RatingComponent;
