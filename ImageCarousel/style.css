@@ -1,0 +1,31 @@
+.outerContainer {
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+.imagesWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  transition: transform .2s ease-in;
+  padding: 0px;
+}
+.image img {
+  width: 100%;
+}
+.arrows {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  top: 50%;
+}
+.arrow {
+  background: black;
+  border-radius: 12px;
+  padding: 2px 8px;
+  color: white;
+  border:none;
+  cursor: pointer;
+}

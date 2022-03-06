@@ -1,0 +1,14 @@
+{
+  "name": "interview-practice",
+  "version": "1.0.0",
+  "description": "practicing different problems",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --collectCoverage"
+  },
+  "author": "Usama Sulaiman",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}

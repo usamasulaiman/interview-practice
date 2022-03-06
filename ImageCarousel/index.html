@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image carousel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="outerContainer">
+    <h1>Image carousel</h1>
+    <ul class="imagesWrapper">
+      <li class="image">
+        <img src="https://cds.cern.ch/record/2668752/files/DSCN6095.png" alt="image 1">
+      </li>
+      <li class="image">
+        <img src="https://d12swbtw719y4s.cloudfront.net/images/Cpp9o87U/q67mVeiot64p3FjilItg/Hello_Song_thumb_sellfy.jpeg?w=1200" alt="image 2">
+      </li>
+      <li class="image">
+        <img src="https://pixy.org/src/480/4800346.jpg" alt="image 3">
+      </li>
+    </ul>
+    <div class="arrows">
+      <button class="arrow prev" onClick="carousel.takeAction('prev')">Prev</button>
+      <button class="arrow next" onClick="carousel.takeAction('next')">Next</button>
+    </div>
+  </div>
+  <script src="./imageCarousel.js"></script>
+</body>
+</html>
