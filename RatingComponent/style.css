@@ -1,0 +1,8 @@
+.star {
+  border: 0px;
+  filter: grayscale(100%);
+  cursor: pointer;
+}
+.star.active {
+  filter: grayscale(0%);
+}
