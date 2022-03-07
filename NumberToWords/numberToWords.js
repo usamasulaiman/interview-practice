@@ -4,7 +4,7 @@
 // e.g, 234003 = Two hundred and thirty four thousand and three
 // e.g, 23406757 = Twenty three million, four hundred and six thousand seven hundrend and fifty seven
 
-// create a map of 0-9
+// create a map of 0-19
 function toOnes(number) {
   const ones = {
     1: 'one',
@@ -16,6 +16,16 @@ function toOnes(number) {
     7: 'seven',
     8: 'eight',
     9: 'nine',
+    10: 'ten',
+    11: 'eleven',
+    12: 'twelve',
+    13: 'thirteen',
+    14: 'fourteen',
+    15: 'fifteen',
+    16: 'sixteen',
+    17: 'seventeen',
+    18: 'eighteen',
+    19: 'nineteen',
   }
   return ones[number];
 }
@@ -23,7 +33,6 @@ function toOnes(number) {
 // create a map of multiples of 10
 function toTens(number) {
   const tens = {
-    10: 'ten',
     20: 'twenty',
     30: 'thirty',
     40: 'fourty',
@@ -49,28 +58,27 @@ function divideNumber(num) {
 }
 
 function integerToString(num) {
-  if (num < 0) return '';
   if (num === 0) return 'zero';
 
   let completeString = '';
-  const hundredsGroup = ['thousand', 'million', 'billion', 'trillion'];
-  
-  const arrayThousands = divideNumber(num);
+  const isNegative = num < 0;
+  const thousandsGroup = ['thousand', 'million', 'billion', 'trillion'];
+  const arrayThousands = divideNumber(Math.abs(num));
 
   for (let i = 0; i < arrayThousands.length; i++) {
     const groupNum = parseInt(arrayThousands[i], 10);
-    const atOne = groupNum % 10;
-    const atTen = groupNum > 9 ? Math.floor(groupNum % 100) - atOne : null;
+    const atOne = groupNum % 100 > 19 ? groupNum % 10 : groupNum % 20;
+    const atTen = groupNum > 19 ? Math.floor(groupNum % 100) - atOne : null;
     const atHundred = groupNum > 99 ? Math.floor(groupNum / 100) : null;
 
     const hundredth = atHundred ? `${toOnes(atHundred)} hundred` : '';
-    const thousandth = i > 0 ? hundredsGroup[i - 1] : '';
+    const thousandth = i > 0 ? thousandsGroup[i - 1] : '';
 
     completeString = 
       `${hundredth} ${hundredth && (atTen || atOne) ? 'and' : ''} ${atTen ? toTens(atTen) : ''} ${atOne ? toOnes(atOne) : ''} ${thousandth} `
       + completeString;
   }
-  return completeString;
+  return isNegative ? `minus${completeString}` : completeString;
 }
 
-console.log(72836757, '->', integerToString(72836757));
+console.log(72836717, '->', integerToString(72836717));
