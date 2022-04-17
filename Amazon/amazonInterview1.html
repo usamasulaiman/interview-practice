@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order form</title>
+  </head>
+  <body>
+    <form id="extra" >
+      <input type="text" name="payment.voucher" />
+    </form>
+
+    <form id="shipping" >
+      <input type="text" name="street.name" />
+      <input type="text" name="street.number" />
+      <input type="text" name="zipcode" />
+      <input type="text" name="contact.phone.area" />
+      <input type="text" name="contact.phone.exchange" />
+      <input type="text" name="contact.phone.subscriber" />
+    </form>
+    
+    <script>
+    // Desired output structure:
+    let extraData = {
+      payment : {
+        voucher : ''
+      }
+    }
+    let shippingData = {
+      street: {
+        name: '',
+        number: '',
+      },
+      zipcode: '',
+      contact: {
+        phone: {
+          area: '',
+          exchange: '',
+          subscriber: ''
+        }
+      }
+    }
+    
+    
+    
+    function getFormElements(id) {
+        const result1;
+        const result2;
+        
+        const element = document.querySelector(id);
+        const children = element.children();
+        for (let i=0; i<=children.length; i++) {
+            const name = children[i].name;
+            const heirarchy = name.split('.');
+            if (heirarychy.length) {
+    
+                heirarchy.map((item, index) => {
+                   
+                    
+                    if (!result[item] && index ===0) {
+                        result[item] = {}
+                    } else if (index === 1) {
+                    result[lastItem][item] = {};
+                    result2 = result1[lastItem]    
+                    } else {
+                      result[result2][lastItem][item] = {}
+                    }
+                    
+                    let lastItem = item;
+                    
+                    
+                })
+            }
+        }
+        
+    } 
+    </script>
+  </body>
+</html>
+
+
+
+Already talked about,
+- homework failure: tell me about a time you had to take a quick decision and work on something without properly checking things
+- design system: tell me about a time you found some issues in the code/team and you took initiative to fix it
